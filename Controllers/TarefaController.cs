@@ -31,14 +31,8 @@ namespace TrilhaApiDesafio.Controllers
         [HttpGet("ObterTodos")]
         public IActionResult ObterTodos()
         {
-            var tarefas = _context.Tarefas.ToList();
-
-            if (tarefas.Count == 0)
-            {
-                return NotFound();
-            }
-
-            return Ok(tarefas);
+            var tarefa = _context.Tarefas.ToList();
+            return Ok(tarefa);
         }
 
         [HttpGet("ObterPorTitulo")]
